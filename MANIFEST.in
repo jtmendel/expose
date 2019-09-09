@@ -1,0 +1,10 @@
+include expose/data/PSF_7mas_5arcsec_370nm_EEProfile.dat
+include expose/data/PSF_7mas_5arcsec_380nm_EEProfile.dat
+include expose/data/PSF_7mas_5arcsec_390nm_EEProfile.dat
+include expose/data/PSF_7mas_5arcsec_400nm_EEProfile.dat
+include expose/data/PSF_7mas_5arcsec_450nm_EEProfile.dat
+include expose/data/PSF_7mas_5arcsec_500nm_EEProfile.dat
+include expose/data/PSF_7mas_5arcsec_700nm_EEProfile.dat
+include expose/data/PSF_7mas_5arcsec_900nm_EEProfile.dat
+include expose/data/mavis_AOM_throughput.txt
+include expose/data/muse_throughput.txt
