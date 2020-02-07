@@ -3,6 +3,7 @@ import numpy as np
 import skycalc_cli
 import json
 import os
+import sys
 
 from astropy.io import fits
 
@@ -16,7 +17,7 @@ class sky_source():
     Output sky radiance is in Photons/s/m^2/um/arcsec^2.
     """
     def __init__(self, fli=0.5, airmass=1.2, pwv=5, 
-                resolution=20000):
+                resolution=20000, offline=False):
         
         self.res = resolution
         self.step = 1./self.res/2. #set step sized based on resolution at 1um
@@ -39,8 +40,8 @@ class sky_source():
                           'incl_loweratm': 'Y',
                           'incl_upperatm': 'Y',
                           'incl_airglow': 'Y',
-                          'incl_therm': 'N',
-                          'therm_t1': 285.0,
+                          'incl_therm': 'Y',
+                          'therm_t1': 287.0,
                           'therm_e1': 0.2,
                           'therm_t2': 0.0,
                           'therm_e2': 0.0,
@@ -55,7 +56,7 @@ class sky_source():
                           'lsf_type': 'none',
                           'lsf_gauss_fwhm': 1.0,
                           'lsf_boxcar_fwhm': 0.,
-                          'observatory': 'paranal'}
+                          'observatory': 'lasilla'}
         
         #storage params
         self.update_sky = False
@@ -68,7 +69,14 @@ class sky_source():
         
         #store initial FLI, airmass, pwv, and update internal parameters
         self.set_params(fli=fli, airmass=airmass, pwv=pwv)
-                
+
+        #reference sky information
+        self.ref_dir = os.path.join(os.path.dirname(sys.modules['expose'].__file__), 'data')
+        self.ref_skies = ['ref_sky_dark.fits','ref_sky_grey.fits','ref_sky_bright.fits']
+   
+        #check if running in offline mode
+        self.offline = offline
+
     def _get_moon_sun_sep(self, fli=None):
         #convert FLI to moon sun separation
         return 180.-np.degrees(np.arccos(2*fli-1))
@@ -92,6 +100,16 @@ class sky_source():
                 self.pwv = pwv
                 self.update_sky = True
                
+    def _read_sky(self, skyfile):
+        with fits.open(skyfile) as sfile:
+            tab = sfile[1].data
+            self.wavelength = np.asarray(tab['LAM'], dtype=np.float)
+            self.emm = np.asarray(tab['FLUX'], dtype=np.float)
+            self.trans = np.asarray(tab['TRANS'], dtype=np.float)
+        
+        #update resolution in pixels
+        self.res_pix = self.wavelength / self.res / self.step / 2.355
+
     def _calc_sky(self):
         #actually run the sky model
         parfile = 'sky_pars.json'
@@ -105,15 +123,8 @@ class sky_source():
         os.system('skycalc_cli -i {0} -o {1}/{2}'.format(parfile, os.getcwd(), skyfile))
         
         #pull in the sky spectrum
-        with fits.open(skyfile) as sfile:
-            tab = sfile[1].data
-            self.wavelength = np.asarray(tab['LAM'], dtype=np.float)
-            self.emm = np.asarray(tab['FLUX'], dtype=np.float)
-            self.trans = np.asarray(tab['TRANS'], dtype=np.float)
-        
-        #update resolution in pixels
-        self.res_pix = self.wavelength / self.res / self.step / 2.355
-        
+        self._read_sky(skyfile)
+       
         os.remove(parfile)
         os.remove(skyfile)
         self.update_sky = False
@@ -122,6 +133,18 @@ class sky_source():
         self.set_params(fli=fli, airmass=airmass, pwv=pwv)
         
         if self.update_sky:
-            self._calc_sky()
-        
+            if self.offline:
+                mindex = np.argmin(np.fabs(self.fli - np.array([0.3,0.7,1.0])))
+                sky_use = os.path.join(self.ref_dir, self.ref_skies[mindex])
+                self._read_sky(sky_use)
+            else:
+                try: #try to execute the command line interface
+                    self._calc_sky()
+                except: #not connected to the internet? Find the closest FLI from the reference
+                    mindex = np.argmin(np.fabs(self.fli - np.array([0.3,0.7,1.0])))
+                    sky_use = os.path.join(self.ref_dir, self.ref_skies[mindex])
+                    print(sky_use)
+                    self._read_sky(sky_use)
+                
+
         return self.wavelength, self.emm, self.trans

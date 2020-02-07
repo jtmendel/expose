@@ -26,12 +26,11 @@ class fsps_source():
 
         #for correction to absolute mags
         self.mag2cgs = np.log10(self.lsun/4.0/np.pi/(self.pc2cm*self.pc2cm)/100.)
-
         
         #initialize SPS object
         self.sp = fsps.StellarPopulation(compute_vega_mags=False, zcontinuous=1,
                                          sfh=1, logzsol=0.0, dust_type=2, dust2=0.1, 
-                                         imf_type=1, tau=1.0)
+                                         imf_type=1, tau=1.0, add_neb_emission=1)
         
         #store master (rest-frame) wavelength array
         self.wavelength = self.sp.wavelengths / 1e4 #in microns
@@ -65,10 +64,11 @@ class fsps_source():
                 2.5*np.log10(1+redshift) #redshift correction
         self.fscale = 10**(self.mag2cgs - 0.4*self.dm)
         return
-        
+       
+
     def set_params(self, age=3., tau=1., metallicity=0., 
                    redshift=1e-10, obs_mag=20., obs_band='sdss_r',
-                   **kwargs):
+                   norm='point', sp_args={}, **kwargs):
         """
         valid args are those that match with parameters in 
         python-fsps
@@ -84,26 +84,34 @@ class fsps_source():
         #update FSPS parameters
         self.sp.params['tau'] = tau
         self.sp.params['logzsol'] = metallicity
-            
+           
+
         #pass any other dictionary values through to FSPS
-        for key, value in kwargs:
-            if key in self.sp.params:
-                self.sp.params[key] = value
+        for key, value in sp_args.items():
+            #print(key, value)
+            #if key in self.sp.params:
+            self.sp.params[key] = value
+
+        #set normalization type
+        self.norm_sb = False
+        if norm == 'extended':
+            self.norm_sb =  True
+
         return
                 
-    def __call__(self):
+    def __call__(self, **kwargs):
                 
         #estimate in-band magnitude given the data provided
         mag_scale = self.sp.get_mags(tage=self.age, redshift=self.redshift, bands=[self.obs_band])
-        flux_factor = 10**(-0.4*self.obs_mag)/10**(-0.4*mag_scale)
+        self.flux_factor = 10**(-0.4*self.obs_mag)/10**(-0.4*mag_scale)
 
         #generate the initial spectrum given the provided parameters
         _, init_spec = self.sp.get_spectrum(tage=self.age)
 
         #convert the spectrum to more useful units
-        spec_scaled = np.copy(init_spec)*flux_factor*self.fscale #in erg/s/cm^2/hz
+        spec_scaled = np.copy(init_spec)*self.flux_factor*self.fscale #in erg/s/cm^2/hz
         
-        photons = spec_scaled *100**2 / self.h / self.red_wavelength #photons/s/m^2/um
+        photons = spec_scaled *100**2 / self.h / self.red_wavelength #photons/s/m^2/um.  If self.norm_sb then arcsec^-2
         
         return self.red_wavelength, photons
 

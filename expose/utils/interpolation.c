@@ -11,12 +11,12 @@
             "include",
             "/Users/jtmendel/.pyenv/versions/3.6.3/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include"
         ],
-        "name": "etc.utils.interpolation",
+        "name": "expose.utils.interpolation",
         "sources": [
-            "etc/utils/interpolation.pyx"
+            "expose/utils/interpolation.pyx"
         ]
     },
-    "module_name": "etc.utils.interpolation"
+    "module_name": "expose.utils.interpolation"
 }
 END: Cython Metadata */
 
@@ -538,8 +538,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__etc__utils__interpolation
-#define __PYX_HAVE_API__etc__utils__interpolation
+#define __PYX_HAVE__expose__utils__interpolation
+#define __PYX_HAVE_API__expose__utils__interpolation
 #include <string.h>
 #include <stdio.h>
 #include "numpy/arrayobject.h"
@@ -773,7 +773,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "etc/utils/interpolation.pyx",
+  "expose/utils/interpolation.pyx",
   "__init__.pxd",
   "stringsource",
   "type.pxd",
@@ -1076,23 +1076,23 @@ typedef npy_double __pyx_t_5numpy_double_t;
  */
 typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
 
-/* "etc/utils/interpolation.pyx":10
+/* "expose/utils/interpolation.pyx":10
  * 
  * 
  * ctypedef np.float_t DTYPE_t             # <<<<<<<<<<<<<<
  * ctypedef np.int_t iDTYPE_t
  * 
  */
-typedef __pyx_t_5numpy_float_t __pyx_t_3etc_5utils_13interpolation_DTYPE_t;
+typedef __pyx_t_5numpy_float_t __pyx_t_6expose_5utils_13interpolation_DTYPE_t;
 
-/* "etc/utils/interpolation.pyx":11
+/* "expose/utils/interpolation.pyx":11
  * 
  * ctypedef np.float_t DTYPE_t
  * ctypedef np.int_t iDTYPE_t             # <<<<<<<<<<<<<<
  * 
  * @cython.wraparound(False)
  */
-typedef __pyx_t_5numpy_int_t __pyx_t_3etc_5utils_13interpolation_iDTYPE_t;
+typedef __pyx_t_5numpy_int_t __pyx_t_6expose_5utils_13interpolation_iDTYPE_t;
 /* Declarations.proto */
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -2021,7 +2021,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, cha
 
 /* Module declarations from 'libc.math' */
 
-/* Module declarations from 'etc.utils.interpolation' */
+/* Module declarations from 'expose.utils.interpolation' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
@@ -2033,11 +2033,11 @@ static PyObject *contiguous = 0;
 static PyObject *indirect_contiguous = 0;
 static int __pyx_memoryview_thread_locks_used;
 static PyThread_type_lock __pyx_memoryview_thread_locks[8];
-static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice); /*proto*/
-static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice, long); /*proto*/
-static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice, long); /*proto*/
-static PyArrayObject *__pyx_f_3etc_5utils_13interpolation_interpolate(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
-static PyArrayObject *__pyx_f_3etc_5utils_13interpolation_interpolate_os(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
+static void __pyx_f_6expose_5utils_13interpolation_getpixelshifts(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice); /*proto*/
+static void __pyx_f_6expose_5utils_13interpolation_calcsinc(__Pyx_memviewslice, long); /*proto*/
+static void __pyx_f_6expose_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice, long); /*proto*/
+static PyArrayObject *__pyx_f_6expose_5utils_13interpolation_interpolate(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
+static PyArrayObject *__pyx_f_6expose_5utils_13interpolation_interpolate_os(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, int __pyx_skip_dispatch); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char *, char *); /*proto*/
 static void *__pyx_align_pointer(void *, size_t); /*proto*/
 static PyObject *__pyx_memoryview_new(PyObject *, int, int, __Pyx_TypeInfo *); /*proto*/
@@ -2071,15 +2071,15 @@ static void __pyx_memoryview_refcount_objects_in_slice(char *, Py_ssize_t *, Py_
 static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size_t, void *, int); /*proto*/
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_3etc_5utils_13interpolation_DTYPE_t = { "DTYPE_t", NULL, sizeof(__pyx_t_3etc_5utils_13interpolation_DTYPE_t), { 0 }, 0, 'R', 0, 0 };
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_3etc_5utils_13interpolation_iDTYPE_t = { "iDTYPE_t", NULL, sizeof(__pyx_t_3etc_5utils_13interpolation_iDTYPE_t), { 0 }, 0, IS_UNSIGNED(__pyx_t_3etc_5utils_13interpolation_iDTYPE_t) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_3etc_5utils_13interpolation_iDTYPE_t), 0 };
+static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_6expose_5utils_13interpolation_DTYPE_t = { "DTYPE_t", NULL, sizeof(__pyx_t_6expose_5utils_13interpolation_DTYPE_t), { 0 }, 0, 'R', 0, 0 };
+static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_6expose_5utils_13interpolation_iDTYPE_t = { "iDTYPE_t", NULL, sizeof(__pyx_t_6expose_5utils_13interpolation_iDTYPE_t), { 0 }, 0, IS_UNSIGNED(__pyx_t_6expose_5utils_13interpolation_iDTYPE_t) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_6expose_5utils_13interpolation_iDTYPE_t), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_double = { "double", NULL, sizeof(double), { 0 }, 0, 'R', 0, 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_long = { "long", NULL, sizeof(long), { 0 }, 0, IS_UNSIGNED(long) ? 'U' : 'I', IS_UNSIGNED(long), 0 };
-#define __Pyx_MODULE_NAME "etc.utils.interpolation"
-extern int __pyx_module_is_main_etc__utils__interpolation;
-int __pyx_module_is_main_etc__utils__interpolation = 0;
+#define __Pyx_MODULE_NAME "expose.utils.interpolation"
+extern int __pyx_module_is_main_expose__utils__interpolation;
+int __pyx_module_is_main_expose__utils__interpolation = 0;
 
-/* Implementation of 'etc.utils.interpolation' */
+/* Implementation of 'expose.utils.interpolation' */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_RuntimeError;
@@ -2293,8 +2293,8 @@ static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
 static PyObject *__pyx_n_s_zeros;
-static PyObject *__pyx_pf_3etc_5utils_13interpolation_interpolate(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_sci_wl, __Pyx_memviewslice __pyx_v_sky_wl, __Pyx_memviewslice __pyx_v_sky_flux); /* proto */
-static PyObject *__pyx_pf_3etc_5utils_13interpolation_2interpolate_os(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_sky_wl, __Pyx_memviewslice __pyx_v_sci_wl, __Pyx_memviewslice __pyx_v_sci_flux); /* proto */
+static PyObject *__pyx_pf_6expose_5utils_13interpolation_interpolate(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_sci_wl, __Pyx_memviewslice __pyx_v_sky_wl, __Pyx_memviewslice __pyx_v_sky_flux); /* proto */
+static PyObject *__pyx_pf_6expose_5utils_13interpolation_2interpolate_os(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_sky_wl, __Pyx_memviewslice __pyx_v_sci_wl, __Pyx_memviewslice __pyx_v_sci_flux); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
@@ -2383,7 +2383,7 @@ static PyObject *__pyx_tuple__33;
 static PyObject *__pyx_tuple__34;
 static PyObject *__pyx_codeobj__35;
 
-/* "etc/utils/interpolation.pyx":16
+/* "expose/utils/interpolation.pyx":16
  * @cython.boundscheck(False)
  * @cython.cdivision(True)
  * cdef void getpixelshifts(double[:] sci_wl, double[:] sky_wl, long[:] mpix, double[:] dpix):             # <<<<<<<<<<<<<<
@@ -2391,7 +2391,7 @@ static PyObject *__pyx_codeobj__35;
  *     cdef Py_ssize_t nsky = sky_wl.shape[0]
  */
 
-static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslice __pyx_v_sci_wl, __Pyx_memviewslice __pyx_v_sky_wl, __Pyx_memviewslice __pyx_v_mpix, __Pyx_memviewslice __pyx_v_dpix) {
+static void __pyx_f_6expose_5utils_13interpolation_getpixelshifts(__Pyx_memviewslice __pyx_v_sci_wl, __Pyx_memviewslice __pyx_v_sky_wl, __Pyx_memviewslice __pyx_v_mpix, __Pyx_memviewslice __pyx_v_dpix) {
   Py_ssize_t __pyx_v_nsci;
   Py_ssize_t __pyx_v_nsky;
   Py_ssize_t __pyx_v_ii;
@@ -2418,7 +2418,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
   Py_ssize_t __pyx_t_17;
   __Pyx_RefNannySetupContext("getpixelshifts", 0);
 
-  /* "etc/utils/interpolation.pyx":17
+  /* "expose/utils/interpolation.pyx":17
  * @cython.cdivision(True)
  * cdef void getpixelshifts(double[:] sci_wl, double[:] sky_wl, long[:] mpix, double[:] dpix):
  *     cdef Py_ssize_t nsci = sci_wl.shape[0]             # <<<<<<<<<<<<<<
@@ -2427,7 +2427,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
  */
   __pyx_v_nsci = (__pyx_v_sci_wl.shape[0]);
 
-  /* "etc/utils/interpolation.pyx":18
+  /* "expose/utils/interpolation.pyx":18
  * cdef void getpixelshifts(double[:] sci_wl, double[:] sky_wl, long[:] mpix, double[:] dpix):
  *     cdef Py_ssize_t nsci = sci_wl.shape[0]
  *     cdef Py_ssize_t nsky = sky_wl.shape[0]             # <<<<<<<<<<<<<<
@@ -2436,7 +2436,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
  */
   __pyx_v_nsky = (__pyx_v_sky_wl.shape[0]);
 
-  /* "etc/utils/interpolation.pyx":23
+  /* "expose/utils/interpolation.pyx":23
  *     cdef double shift, dlam
  * 
  *     j = 1             # <<<<<<<<<<<<<<
@@ -2445,7 +2445,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
  */
   __pyx_v_j = 1;
 
-  /* "etc/utils/interpolation.pyx":24
+  /* "expose/utils/interpolation.pyx":24
  * 
  *     j = 1
  *     shift = 0.             # <<<<<<<<<<<<<<
@@ -2454,7 +2454,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
  */
   __pyx_v_shift = 0.;
 
-  /* "etc/utils/interpolation.pyx":25
+  /* "expose/utils/interpolation.pyx":25
  *     j = 1
  *     shift = 0.
  *     dlam = 0.             # <<<<<<<<<<<<<<
@@ -2463,7 +2463,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
  */
   __pyx_v_dlam = 0.;
 
-  /* "etc/utils/interpolation.pyx":26
+  /* "expose/utils/interpolation.pyx":26
  *     shift = 0.
  *     dlam = 0.
  *     for ii in range(nsky):             # <<<<<<<<<<<<<<
@@ -2474,7 +2474,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_ii = __pyx_t_2;
 
-    /* "etc/utils/interpolation.pyx":27
+    /* "expose/utils/interpolation.pyx":27
  *     dlam = 0.
  *     for ii in range(nsky):
  *         while (j < nsci-1) and (sci_wl[j] < sky_wl[ii]):             # <<<<<<<<<<<<<<
@@ -2495,7 +2495,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
       __pyx_L7_bool_binop_done:;
       if (!__pyx_t_3) break;
 
-      /* "etc/utils/interpolation.pyx":28
+      /* "expose/utils/interpolation.pyx":28
  *     for ii in range(nsky):
  *         while (j < nsci-1) and (sci_wl[j] < sky_wl[ii]):
  *             j += 1             # <<<<<<<<<<<<<<
@@ -2505,7 +2505,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
       __pyx_v_j = (__pyx_v_j + 1);
     }
 
-    /* "etc/utils/interpolation.pyx":29
+    /* "expose/utils/interpolation.pyx":29
  *         while (j < nsci-1) and (sci_wl[j] < sky_wl[ii]):
  *             j += 1
  *         dlam = sci_wl[j]-sci_wl[j-1]             # <<<<<<<<<<<<<<
@@ -2516,7 +2516,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
     __pyx_t_8 = (__pyx_v_j - 1);
     __pyx_v_dlam = ((*((double *) ( /* dim=0 */ (__pyx_v_sci_wl.data + __pyx_t_7 * __pyx_v_sci_wl.strides[0]) ))) - (*((double *) ( /* dim=0 */ (__pyx_v_sci_wl.data + __pyx_t_8 * __pyx_v_sci_wl.strides[0]) ))));
 
-    /* "etc/utils/interpolation.pyx":30
+    /* "expose/utils/interpolation.pyx":30
  *             j += 1
  *         dlam = sci_wl[j]-sci_wl[j-1]
  *         shift = (sky_wl[ii] - sci_wl[j]) / dlam             # <<<<<<<<<<<<<<
@@ -2527,7 +2527,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
     __pyx_t_10 = __pyx_v_j;
     __pyx_v_shift = (((*((double *) ( /* dim=0 */ (__pyx_v_sky_wl.data + __pyx_t_9 * __pyx_v_sky_wl.strides[0]) ))) - (*((double *) ( /* dim=0 */ (__pyx_v_sci_wl.data + __pyx_t_10 * __pyx_v_sci_wl.strides[0]) )))) / __pyx_v_dlam);
 
-    /* "etc/utils/interpolation.pyx":31
+    /* "expose/utils/interpolation.pyx":31
  *         dlam = sci_wl[j]-sci_wl[j-1]
  *         shift = (sky_wl[ii] - sci_wl[j]) / dlam
  *         mpix[ii] = int(floor(shift+0.5)) + j             # <<<<<<<<<<<<<<
@@ -2547,7 +2547,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
     __pyx_t_15 = __pyx_v_ii;
     *((long *) ( /* dim=0 */ (__pyx_v_mpix.data + __pyx_t_15 * __pyx_v_mpix.strides[0]) )) = __pyx_t_14;
 
-    /* "etc/utils/interpolation.pyx":32
+    /* "expose/utils/interpolation.pyx":32
  *         shift = (sky_wl[ii] - sci_wl[j]) / dlam
  *         mpix[ii] = int(floor(shift+0.5)) + j
  *         dpix[ii] = shift - float(mpix[ii]) + j             # <<<<<<<<<<<<<<
@@ -2559,7 +2559,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
     *((double *) ( /* dim=0 */ (__pyx_v_dpix.data + __pyx_t_17 * __pyx_v_dpix.strides[0]) )) = ((__pyx_v_shift - ((double)(*((long *) ( /* dim=0 */ (__pyx_v_mpix.data + __pyx_t_16 * __pyx_v_mpix.strides[0]) ))))) + __pyx_v_j);
   }
 
-  /* "etc/utils/interpolation.pyx":16
+  /* "expose/utils/interpolation.pyx":16
  * @cython.boundscheck(False)
  * @cython.cdivision(True)
  * cdef void getpixelshifts(double[:] sci_wl, double[:] sky_wl, long[:] mpix, double[:] dpix):             # <<<<<<<<<<<<<<
@@ -2573,12 +2573,12 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
-  __Pyx_WriteUnraisable("etc.utils.interpolation.getpixelshifts", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __Pyx_WriteUnraisable("expose.utils.interpolation.getpixelshifts", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
 }
 
-/* "etc/utils/interpolation.pyx":38
+/* "expose/utils/interpolation.pyx":38
  * @cython.boundscheck(False)
  * @cython.cdivision(True)
  * cdef void calcsinc(double[:] sinc, long nsinc):             # <<<<<<<<<<<<<<
@@ -2586,7 +2586,7 @@ static void __pyx_f_3etc_5utils_13interpolation_getpixelshifts(__Pyx_memviewslic
  *     cdef long SINCBIN = 10000
  */
 
-static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __pyx_v_sinc, long __pyx_v_nsinc) {
+static void __pyx_f_6expose_5utils_13interpolation_calcsinc(__Pyx_memviewslice __pyx_v_sinc, long __pyx_v_nsinc) {
   double __pyx_v_SINCRAD;
   CYTHON_UNUSED long __pyx_v_SINCBIN;
   double __pyx_v_SINCDAMP;
@@ -2605,7 +2605,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
   Py_ssize_t __pyx_t_8;
   __Pyx_RefNannySetupContext("calcsinc", 0);
 
-  /* "etc/utils/interpolation.pyx":39
+  /* "expose/utils/interpolation.pyx":39
  * @cython.cdivision(True)
  * cdef void calcsinc(double[:] sinc, long nsinc):
  *     cdef double SINCRAD = 6.0             # <<<<<<<<<<<<<<
@@ -2614,7 +2614,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
  */
   __pyx_v_SINCRAD = 6.0;
 
-  /* "etc/utils/interpolation.pyx":40
+  /* "expose/utils/interpolation.pyx":40
  * cdef void calcsinc(double[:] sinc, long nsinc):
  *     cdef double SINCRAD = 6.0
  *     cdef long SINCBIN = 10000             # <<<<<<<<<<<<<<
@@ -2623,7 +2623,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
  */
   __pyx_v_SINCBIN = 0x2710;
 
-  /* "etc/utils/interpolation.pyx":41
+  /* "expose/utils/interpolation.pyx":41
  *     cdef double SINCRAD = 6.0
  *     cdef long SINCBIN = 10000
  *     cdef double SINCDAMP = 3.25             # <<<<<<<<<<<<<<
@@ -2632,7 +2632,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
  */
   __pyx_v_SINCDAMP = 3.25;
 
-  /* "etc/utils/interpolation.pyx":43
+  /* "expose/utils/interpolation.pyx":43
  *     cdef double SINCDAMP = 3.25
  * 
  *     cdef long nsinch = int(nsinc / 2)             # <<<<<<<<<<<<<<
@@ -2641,7 +2641,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
  */
   __pyx_v_nsinch = (__pyx_v_nsinc / 2);
 
-  /* "etc/utils/interpolation.pyx":44
+  /* "expose/utils/interpolation.pyx":44
  * 
  *     cdef long nsinch = int(nsinc / 2)
  *     cdef double dx = float((2.*SINCRAD)/(nsinc-1.))             # <<<<<<<<<<<<<<
@@ -2650,7 +2650,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
  */
   __pyx_v_dx = ((2. * __pyx_v_SINCRAD) / (__pyx_v_nsinc - 1.));
 
-  /* "etc/utils/interpolation.pyx":47
+  /* "expose/utils/interpolation.pyx":47
  *     cdef long kk
  * 
  *     for kk in range(nsinch):             # <<<<<<<<<<<<<<
@@ -2661,7 +2661,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_kk = __pyx_t_2;
 
-    /* "etc/utils/interpolation.pyx":48
+    /* "expose/utils/interpolation.pyx":48
  * 
  *     for kk in range(nsinch):
  *         x = (kk-nsinch)*dx             # <<<<<<<<<<<<<<
@@ -2670,7 +2670,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
  */
     __pyx_v_x = ((__pyx_v_kk - __pyx_v_nsinch) * __pyx_v_dx);
 
-    /* "etc/utils/interpolation.pyx":49
+    /* "expose/utils/interpolation.pyx":49
  *     for kk in range(nsinch):
  *         x = (kk-nsinch)*dx
  *         if ceil(x) == x:             # <<<<<<<<<<<<<<
@@ -2680,7 +2680,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
     __pyx_t_3 = ((ceil(__pyx_v_x) == __pyx_v_x) != 0);
     if (__pyx_t_3) {
 
-      /* "etc/utils/interpolation.pyx":50
+      /* "expose/utils/interpolation.pyx":50
  *         x = (kk-nsinch)*dx
  *         if ceil(x) == x:
  *             sinc[kk] = 0.             # <<<<<<<<<<<<<<
@@ -2690,7 +2690,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
       __pyx_t_4 = __pyx_v_kk;
       *((double *) ( /* dim=0 */ (__pyx_v_sinc.data + __pyx_t_4 * __pyx_v_sinc.strides[0]) )) = 0.;
 
-      /* "etc/utils/interpolation.pyx":49
+      /* "expose/utils/interpolation.pyx":49
  *     for kk in range(nsinch):
  *         x = (kk-nsinch)*dx
  *         if ceil(x) == x:             # <<<<<<<<<<<<<<
@@ -2700,7 +2700,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
       goto __pyx_L5;
     }
 
-    /* "etc/utils/interpolation.pyx":52
+    /* "expose/utils/interpolation.pyx":52
  *             sinc[kk] = 0.
  *         else:
  *             sinc[kk] = exp(-1.*pow(x/SINCDAMP, 2)) * sin(M_PI*x)/(M_PI*x)             # <<<<<<<<<<<<<<
@@ -2714,7 +2714,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
     __pyx_L5:;
   }
 
-  /* "etc/utils/interpolation.pyx":53
+  /* "expose/utils/interpolation.pyx":53
  *         else:
  *             sinc[kk] = exp(-1.*pow(x/SINCDAMP, 2)) * sin(M_PI*x)/(M_PI*x)
  *     sinc[nsinch] = 1.             # <<<<<<<<<<<<<<
@@ -2724,7 +2724,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
   __pyx_t_6 = __pyx_v_nsinch;
   *((double *) ( /* dim=0 */ (__pyx_v_sinc.data + __pyx_t_6 * __pyx_v_sinc.strides[0]) )) = 1.;
 
-  /* "etc/utils/interpolation.pyx":54
+  /* "expose/utils/interpolation.pyx":54
  *             sinc[kk] = exp(-1.*pow(x/SINCDAMP, 2)) * sin(M_PI*x)/(M_PI*x)
  *     sinc[nsinch] = 1.
  *     for kk in range(nsinch+1,nsinc):             # <<<<<<<<<<<<<<
@@ -2735,7 +2735,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
   for (__pyx_t_2 = (__pyx_v_nsinch + 1); __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_kk = __pyx_t_2;
 
-    /* "etc/utils/interpolation.pyx":55
+    /* "expose/utils/interpolation.pyx":55
  *     sinc[nsinch] = 1.
  *     for kk in range(nsinch+1,nsinc):
  *         sinc[kk] = sinc[nsinc-kk-1]             # <<<<<<<<<<<<<<
@@ -2747,7 +2747,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
     *((double *) ( /* dim=0 */ (__pyx_v_sinc.data + __pyx_t_8 * __pyx_v_sinc.strides[0]) )) = (*((double *) ( /* dim=0 */ (__pyx_v_sinc.data + __pyx_t_7 * __pyx_v_sinc.strides[0]) )));
   }
 
-  /* "etc/utils/interpolation.pyx":38
+  /* "expose/utils/interpolation.pyx":38
  * @cython.boundscheck(False)
  * @cython.cdivision(True)
  * cdef void calcsinc(double[:] sinc, long nsinc):             # <<<<<<<<<<<<<<
@@ -2759,7 +2759,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
   __Pyx_RefNannyFinishContext();
 }
 
-/* "etc/utils/interpolation.pyx":61
+/* "expose/utils/interpolation.pyx":61
  * @cython.boundscheck(False)
  * @cython.cdivision(True)
  * cdef void calcsinc_os(double[:] sinc, long nsinc):             # <<<<<<<<<<<<<<
@@ -2767,7 +2767,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc(__Pyx_memviewslice __py
  *     cdef long SINCBIN = 10000
  */
 
-static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice __pyx_v_sinc, long __pyx_v_nsinc) {
+static void __pyx_f_6expose_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice __pyx_v_sinc, long __pyx_v_nsinc) {
   double __pyx_v_SINCRAD;
   CYTHON_UNUSED long __pyx_v_SINCBIN;
   double __pyx_v_SINCDAMP;
@@ -2786,7 +2786,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
   Py_ssize_t __pyx_t_8;
   __Pyx_RefNannySetupContext("calcsinc_os", 0);
 
-  /* "etc/utils/interpolation.pyx":62
+  /* "expose/utils/interpolation.pyx":62
  * @cython.cdivision(True)
  * cdef void calcsinc_os(double[:] sinc, long nsinc):
  *     cdef double SINCRAD = 4.0             # <<<<<<<<<<<<<<
@@ -2795,7 +2795,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
  */
   __pyx_v_SINCRAD = 4.0;
 
-  /* "etc/utils/interpolation.pyx":63
+  /* "expose/utils/interpolation.pyx":63
  * cdef void calcsinc_os(double[:] sinc, long nsinc):
  *     cdef double SINCRAD = 4.0
  *     cdef long SINCBIN = 10000             # <<<<<<<<<<<<<<
@@ -2804,7 +2804,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
  */
   __pyx_v_SINCBIN = 0x2710;
 
-  /* "etc/utils/interpolation.pyx":64
+  /* "expose/utils/interpolation.pyx":64
  *     cdef double SINCRAD = 4.0
  *     cdef long SINCBIN = 10000
  *     cdef double SINCDAMP = 1.15             # <<<<<<<<<<<<<<
@@ -2813,7 +2813,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
  */
   __pyx_v_SINCDAMP = 1.15;
 
-  /* "etc/utils/interpolation.pyx":66
+  /* "expose/utils/interpolation.pyx":66
  *     cdef double SINCDAMP = 1.15
  * 
  *     cdef long nsinch = int(nsinc / 2)             # <<<<<<<<<<<<<<
@@ -2822,7 +2822,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
  */
   __pyx_v_nsinch = (__pyx_v_nsinc / 2);
 
-  /* "etc/utils/interpolation.pyx":67
+  /* "expose/utils/interpolation.pyx":67
  * 
  *     cdef long nsinch = int(nsinc / 2)
  *     cdef double dx = float((2.*SINCRAD)/(nsinc-1.))             # <<<<<<<<<<<<<<
@@ -2831,7 +2831,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
  */
   __pyx_v_dx = ((2. * __pyx_v_SINCRAD) / (__pyx_v_nsinc - 1.));
 
-  /* "etc/utils/interpolation.pyx":70
+  /* "expose/utils/interpolation.pyx":70
  *     cdef long kk
  * 
  *     for kk in range(nsinch):             # <<<<<<<<<<<<<<
@@ -2842,7 +2842,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_kk = __pyx_t_2;
 
-    /* "etc/utils/interpolation.pyx":71
+    /* "expose/utils/interpolation.pyx":71
  * 
  *     for kk in range(nsinch):
  *         x = (kk-nsinch)*dx             # <<<<<<<<<<<<<<
@@ -2851,7 +2851,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
  */
     __pyx_v_x = ((__pyx_v_kk - __pyx_v_nsinch) * __pyx_v_dx);
 
-    /* "etc/utils/interpolation.pyx":72
+    /* "expose/utils/interpolation.pyx":72
  *     for kk in range(nsinch):
  *         x = (kk-nsinch)*dx
  *         if ceil(x) == x:             # <<<<<<<<<<<<<<
@@ -2861,7 +2861,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
     __pyx_t_3 = ((ceil(__pyx_v_x) == __pyx_v_x) != 0);
     if (__pyx_t_3) {
 
-      /* "etc/utils/interpolation.pyx":73
+      /* "expose/utils/interpolation.pyx":73
  *         x = (kk-nsinch)*dx
  *         if ceil(x) == x:
  *             sinc[kk] = 0.             # <<<<<<<<<<<<<<
@@ -2871,7 +2871,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
       __pyx_t_4 = __pyx_v_kk;
       *((double *) ( /* dim=0 */ (__pyx_v_sinc.data + __pyx_t_4 * __pyx_v_sinc.strides[0]) )) = 0.;
 
-      /* "etc/utils/interpolation.pyx":72
+      /* "expose/utils/interpolation.pyx":72
  *     for kk in range(nsinch):
  *         x = (kk-nsinch)*dx
  *         if ceil(x) == x:             # <<<<<<<<<<<<<<
@@ -2881,7 +2881,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
       goto __pyx_L5;
     }
 
-    /* "etc/utils/interpolation.pyx":75
+    /* "expose/utils/interpolation.pyx":75
  *             sinc[kk] = 0.
  *         else:
  *             sinc[kk] = exp(-1.*pow(x/SINCDAMP, 2)) * sin(M_PI*x)/(M_PI*x)             # <<<<<<<<<<<<<<
@@ -2895,7 +2895,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
     __pyx_L5:;
   }
 
-  /* "etc/utils/interpolation.pyx":76
+  /* "expose/utils/interpolation.pyx":76
  *         else:
  *             sinc[kk] = exp(-1.*pow(x/SINCDAMP, 2)) * sin(M_PI*x)/(M_PI*x)
  *     sinc[nsinch] = 1.             # <<<<<<<<<<<<<<
@@ -2905,7 +2905,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
   __pyx_t_6 = __pyx_v_nsinch;
   *((double *) ( /* dim=0 */ (__pyx_v_sinc.data + __pyx_t_6 * __pyx_v_sinc.strides[0]) )) = 1.;
 
-  /* "etc/utils/interpolation.pyx":77
+  /* "expose/utils/interpolation.pyx":77
  *             sinc[kk] = exp(-1.*pow(x/SINCDAMP, 2)) * sin(M_PI*x)/(M_PI*x)
  *     sinc[nsinch] = 1.
  *     for kk in range(nsinch+1,nsinc):             # <<<<<<<<<<<<<<
@@ -2916,7 +2916,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
   for (__pyx_t_2 = (__pyx_v_nsinch + 1); __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_kk = __pyx_t_2;
 
-    /* "etc/utils/interpolation.pyx":78
+    /* "expose/utils/interpolation.pyx":78
  *     sinc[nsinch] = 1.
  *     for kk in range(nsinch+1,nsinc):
  *         sinc[kk] = sinc[nsinc-kk-1]             # <<<<<<<<<<<<<<
@@ -2928,7 +2928,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
     *((double *) ( /* dim=0 */ (__pyx_v_sinc.data + __pyx_t_8 * __pyx_v_sinc.strides[0]) )) = (*((double *) ( /* dim=0 */ (__pyx_v_sinc.data + __pyx_t_7 * __pyx_v_sinc.strides[0]) )));
   }
 
-  /* "etc/utils/interpolation.pyx":61
+  /* "expose/utils/interpolation.pyx":61
  * @cython.boundscheck(False)
  * @cython.cdivision(True)
  * cdef void calcsinc_os(double[:] sinc, long nsinc):             # <<<<<<<<<<<<<<
@@ -2940,7 +2940,7 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
   __Pyx_RefNannyFinishContext();
 }
 
-/* "etc/utils/interpolation.pyx":84
+/* "expose/utils/interpolation.pyx":84
  * @cython.boundscheck(False)
  * @cython.cdivision(True)
  * cpdef np.ndarray[DTYPE_t, ndim=1] interpolate(double[:] sci_wl, double[:] sky_wl, double[:] sky_flux):             # <<<<<<<<<<<<<<
@@ -2948,8 +2948,8 @@ static void __pyx_f_3etc_5utils_13interpolation_calcsinc_os(__Pyx_memviewslice _
  *     #parameters for the sinc kernel
  */
 
-static PyObject *__pyx_pw_3etc_5utils_13interpolation_1interpolate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyArrayObject *__pyx_f_3etc_5utils_13interpolation_interpolate(__Pyx_memviewslice __pyx_v_sci_wl, __Pyx_memviewslice __pyx_v_sky_wl, __Pyx_memviewslice __pyx_v_sky_flux, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_6expose_5utils_13interpolation_1interpolate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyArrayObject *__pyx_f_6expose_5utils_13interpolation_interpolate(__Pyx_memviewslice __pyx_v_sci_wl, __Pyx_memviewslice __pyx_v_sky_wl, __Pyx_memviewslice __pyx_v_sky_flux, CYTHON_UNUSED int __pyx_skip_dispatch) {
   double __pyx_v_SINCRAD;
   long __pyx_v_SINCBIN;
   CYTHON_UNUSED double __pyx_v_SINCDAMP;
@@ -3044,7 +3044,7 @@ static PyArrayObject *__pyx_f_3etc_5utils_13interpolation_interpolate(__Pyx_memv
   __pyx_pybuffernd_sky_out.data = NULL;
   __pyx_pybuffernd_sky_out.rcbuffer = &__pyx_pybuffer_sky_out;
 
-  /* "etc/utils/interpolation.pyx":87
+  /* "expose/utils/interpolation.pyx":87
  * 
  *     #parameters for the sinc kernel
  *     cdef double SINCRAD = 6.0             # <<<<<<<<<<<<<<
@@ -3053,7 +3053,7 @@ static PyArrayObject *__pyx_f_3etc_5utils_13interpolation_interpolate(__Pyx_memv
  */
   __pyx_v_SINCRAD = 6.0;
 
-  /* "etc/utils/interpolation.pyx":88
+  /* "expose/utils/interpolation.pyx":88
  *     #parameters for the sinc kernel
  *     cdef double SINCRAD = 6.0
  *     cdef long SINCBIN = 10000             # <<<<<<<<<<<<<<
@@ -3062,7 +3062,7 @@ static PyArrayObject *__pyx_f_3etc_5utils_13interpolation_interpolate(__Pyx_memv
  */
   __pyx_v_SINCBIN = 0x2710;
 
-  /* "etc/utils/interpolation.pyx":89
+  /* "expose/utils/interpolation.pyx":89
  *     cdef double SINCRAD = 6.0
  *     cdef long SINCBIN = 10000
  *     cdef double SINCDAMP = 3.25             # <<<<<<<<<<<<<<
@@ -3071,7 +3071,7 @@ static PyArrayObject *__pyx_f_3etc_5utils_13interpolation_interpolate(__Pyx_memv
  */
   __pyx_v_SINCDAMP = 3.25;
 
-  /* "etc/utils/interpolation.pyx":90
+  /* "expose/utils/interpolation.pyx":90
  *     cdef long SINCBIN = 10000
  *     cdef double SINCDAMP = 3.25
  *     cdef long nsinc = int((2*SINCRAD) * SINCBIN + 1)             # <<<<<<<<<<<<<<
@@ -3080,7 +3080,7 @@ static PyArrayObject *__pyx_f_3etc_5utils_13interpolation_interpolate(__Pyx_memv
  */
   __pyx_v_nsinc = ((long)(((2.0 * __pyx_v_SINCRAD) * __pyx_v_SINCBIN) + 1.0));
 
-  /* "etc/utils/interpolation.pyx":91
+  /* "expose/utils/interpolation.pyx":91
  *     cdef double SINCDAMP = 3.25
  *     cdef long nsinc = int((2*SINCRAD) * SINCBIN + 1)
  *     cdef np.ndarray[DTYPE_t, ndim=1] psinc = np.zeros(nsinc, dtype=float)             # <<<<<<<<<<<<<<
