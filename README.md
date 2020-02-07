@@ -8,9 +8,13 @@ If you have git installed, then you can obtain the software like so:
 ```
 git clone https:/github.com/jtmendel/expose.git expose
 cd expose
-python setup.py expose
+python setup.py develop
 ```
-This will compile the necessary routines and install them to their appropriate locations.  There are various options controlling *where* those locations might be, with perhaps the most germane being `--prefix=/path/to/installation` and `--install-scripts=/directory/in/your/path`.  Additional install options can be perused using:
+This will compile the necessary routines and create a link to their location in your python directory (currently recommended since things are likely to change).  If you chose, you can also perform a standard installation, i.e:
+```
+python setup.py install
+```
+There are various options controlling *where* things are located, with perhaps the most germane being `--prefix=/path/to/installation` and `--install-scripts=/directory/in/your/path`.  Additional install options can be perused using:
 
 ```
 python setup.py install --help
