@@ -12,10 +12,10 @@ from ..utils.interpolation import interpolate_os
 from ..utils.smoothing import smooth
 
 
-__all__ = ["instrument", "MUSE", "MAVIS"]
+__all__ = ["IFSInstrument", "MUSE", "MAVIS_IFS"]
 
 
-class instrument:
+class IFSInstrument:
     """
     Generic instrument class with some generic instrument routines.  
     """
@@ -129,7 +129,7 @@ class instrument:
         return self.inst_wavelength, sn
    
 
-class MUSE(instrument):
+class MUSE(IFSInstrument):
     """ 
     A MUSE-like instrument.  
     
@@ -139,7 +139,7 @@ class MUSE(instrument):
 
     def __init__(self, mode='WFM'):
         #initialize the model base
-        instrument.__init__(self)
+        IFSInstrument.__init__(self)
 
         #wavelength business
         self.step = 1.25 / 1e4 #microns
@@ -199,7 +199,7 @@ class MUSE(instrument):
         return ee_out, binning**2
 
 
-class MAVIS(instrument):
+class MAVIS_IFS(IFSInstrument):
     """
     A MAVIS-like instrument.
 
@@ -208,19 +208,18 @@ class MAVIS(instrument):
     and more elaborate PSF model.
     """
 
-    #def __init__(self, R=7000, pix_scale=0.007, jitter=5, R_ref=0.7, aom_index=1):
-    def __init__(self, mode=None, pix_scale=0.007, jitter=5, aom_index=1):
+    def __init__(self, mode=None, pix_scale=0.007, jitter=5):
         #check for reasonable jitter values
         if jitter not in [5,10,20,30,40]:
             raise ValueError('Input jitter must be one of 5, 10, 20, 30, or 40 (mas)')
 
         if mode not in ['LR-blue','LR-red','HR-blue','HR-red']:
-            raise ValueError('Invalid grating setup.  Must be one of LR-blue, LR-red, HR-blue, or HR-red')
+            raise ValueError('Invalid grating setup.  Must be one of LR-blue, LR-red, HR-blue, or HR-red.')
 
         #initialize the model base
-        instrument.__init__(self)
+        IFSInstrument.__init__(self)
 
-        #fixed for the moment by the EE profiles
+        #set the pixel scale
         self.pix_scale = pix_scale
         
         #detector parameters (adopted from MUSE)

@@ -85,7 +85,7 @@ class line_source():
         if wavelength is None:
             raise ValueError("Wavelength must be provided for line model")
         if resolution is None:
-            raise ValueError("Resolution must be provided for line model")
+            resolution = np.zeros_like(wavelength)
 
         self.red_step = np.diff(wavelength)[0]
         self.res_pix = np.copy(resolution)

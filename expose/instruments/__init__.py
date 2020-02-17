@@ -1,3 +1,4 @@
-from .instruments import *
+from .ifs import *
+from .imager import *
 
-__all__ = ["MUSE", "MAVIS"]
+__all__ = ["MUSE", "MAVIS_IFS", "MAVIS_Imager"]
