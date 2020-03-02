@@ -56,7 +56,7 @@ class sky_source():
                           'lsf_type': 'none',
                           'lsf_gauss_fwhm': 1.0,
                           'lsf_boxcar_fwhm': 0.,
-                          'observatory': 'lasilla'}
+                          'observatory': 'paranal'}
         
         #storage params
         self.update_sky = False
@@ -104,8 +104,8 @@ class sky_source():
         with fits.open(skyfile) as sfile:
             tab = sfile[1].data
             self.wavelength = np.asarray(tab['LAM'], dtype=np.float)
-            self.emm = np.asarray(tab['FLUX'], dtype=np.float)
             self.trans = np.asarray(tab['TRANS'], dtype=np.float)
+            self.emm = np.asarray(tab['FLUX'], dtype=np.float)/self.trans
         
         #update resolution in pixels
         self.res_pix = self.wavelength / self.res / self.step / 2.355
@@ -143,7 +143,6 @@ class sky_source():
                 except: #not connected to the internet? Find the closest FLI from the reference
                     mindex = np.argmin(np.fabs(self.fli - np.array([0.3,0.7,1.0])))
                     sky_use = os.path.join(self.ref_dir, self.ref_skies[mindex])
-                    print(sky_use)
                     self._read_sky(sky_use)
                 
 

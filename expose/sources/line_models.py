@@ -72,11 +72,10 @@ class line_source():
         #convert line width to pixels
         line_res = self.line_wavelength * self.width / 2.998e5 / dpix #pixels
         inst_res = np.interp(self.line_wavelength, wavelength, resolution) #pixels
-        line_sig = np.sqrt(line_res**2 + inst_res**2)
+        line_sig = np.sqrt(line_res**2 + inst_res**2) #pixels
 
         #build emission line template array
         emm_template = self.flux*np.diff(norm.cdf(edges, loc=self.line_wavelength, scale=line_sig*dpix)) / dpix
-
         return emm_template
 
 
@@ -95,7 +94,7 @@ class line_source():
         sim_spec = self._make_line(wavelength, resolution) #erg/s/cm^2/um
 
         #convert to useful units
-        photons = sim_spec * 100**2 / self.h / (self.clight/1e4) / wavelength
+        photons = sim_spec * 100**2 * wavelength / self.h / (self.clight/1e4) #photons/s/m^2/um
 
 
         #estimate in-band magnitude given the data provided

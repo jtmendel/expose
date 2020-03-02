@@ -167,6 +167,7 @@ if __name__ == "__main__":
 			      "expose/data/UT4_M2_reflect.csv",
 			      "expose/data/UT4_M3_reflect.csv",
 			      "expose/data/grating_eff.csv",
+			      "expose/data/1280scicam_QE.csv",
                               "expose/data/kc_templates/elliptical_template.fits",
                               "expose/data/kc_templates/s0_template.fits",
                               "expose/data/kc_templates/sa_template.fits",

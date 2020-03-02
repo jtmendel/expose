@@ -53,6 +53,7 @@ include expose/data/UT4_M1_reflect.csv
 include expose/data/UT4_M2_reflect.csv
 include expose/data/UT4_M3_reflect.csv
 include expose/data/grating_eff.csv
+include expose/data/1280scicam_QE.csv
 include expose/data/kc_templates/elliptical_template.fits
 include expose/data/kc_templates/s0_template.fits
 include expose/data/kc_templates/sa_template.fits

@@ -111,7 +111,8 @@ class fsps_source():
         #convert the spectrum to more useful units
         spec_scaled = np.copy(init_spec)*self.flux_factor*self.fscale #in erg/s/cm^2/hz
         
-        photons = spec_scaled *100**2 / self.h / self.red_wavelength #photons/s/m^2/um.  If self.norm_sb then arcsec^-2
+        #photons = spec_scaled *100**2 / self.h / self.red_wavelength #photons/s/m^2/um.  If self.norm_sb then arcsec^-2
+        photons = spec_scaled * 100**2 / self.h / self.red_wavelength #photons/s/m^2/um.  If self.norm_sb then arcsec^-2
         
         return self.red_wavelength, photons
 

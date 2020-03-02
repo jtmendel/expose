@@ -12,7 +12,7 @@ import fsps
 from ..utils.smoothing import smooth
 
 
-__all__ = ["ImagingInstrument", "DREAMS", "MAVIS_Imager"]
+__all__ = ["ImagingInstrument", "DREAMS_Imager", "MAVIS_Imager"]
 
 
 class ImagingInstrument:
@@ -158,31 +158,44 @@ class ImagingInstrument:
         return self.pivot, sn
    
 
-class DREAMS(ImagingInstrument):
+class DREAMS_Imager(ImagingInstrument):
     """ 
     A DREAMS-like instrument. 
     
     Assumes a simple gaussian model for the PSF.
     """
 
-    def __init__(self):
+    def __init__(self, pix_scale=3.59):
         #initialize the model base
         ImagingInstrument.__init__(self)
 
         #wavelength business
-        self.step = 1.25 / 1e4 #microns
-        self.wmin, self.wmax = 4800./1e4, 9300./1e4
+        self.step = 1. / 1e4 #microns
+        self.wmin, self.wmax = 9700./1e4, 17800./1e4
         self.inst_wavelength = np.arange(self.wmin, self.wmax, self.step)
 
+        #set the pixel scale
+        self.pix_scale = pix_scale
+ 
         #get path for bundled package files
-        bfile_dir = os.path.join(os.path.dirname(sys.modules['expose'].__file__), 'data/muse')
+        bfile_dir = os.path.join(os.path.dirname(sys.modules['expose'].__file__), 'data')
         
         #detector parameters
-        self.rn = 3.0 #e-/pixel/dit
-        self.dark = 3.0/3600. #e-/pixel/s
-        
-        #assume 40% generic throughput?
-        
+        self.rn = 35.0 #e-/pixel/dit
+        self.dark = 300. #e-/pixel/s
+       
+        #Princeton detector stats
+        data = np.array(asc.read(os.path.join(bfile_dir, '1280scicam_QE.csv')))
+        twave = np.array(data['col1'])
+        tqe = np.array(data['col2'])
+        p_qe = interp1d(twave, tqe, fill_value='extrapolate')(self.inst_wavelength)
+
+        #assume high reflectivity from gold coatings coatings
+        self.tel_tpt = 0.96**2 * p_qe * 0.8 #80 % fudge
+        self.tpt = self.tel_tpt * 0.98**2 * 0.9
+
+        #simple Gaussian EE
+        self._ee = self._EE_gaussian
 
 
 class MAVIS_Imager(ImagingInstrument):

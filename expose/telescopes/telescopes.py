@@ -1,7 +1,7 @@
 from __future__ import print_function
 import numpy as np
 
-__all__ = ['VLT', 'telescope']
+__all__ = ['VLT', 'DREAMS', 'telescope']
 
 class telescope:
     """
@@ -21,6 +21,16 @@ class VLT(telescope):
         telescope.__init__(self)
 
         self.area = 48.32507025
+        
+        #include some mirror stuff here so area is actually calculated
+        #include PSF calculation as well?  could do
+
+class DREAMS(telescope):
+    def __init__(self):
+        #initialize the model base
+        telescope.__init__(self)
+
+        self.area = np.pi*(0.5**2 - 0.226**2)
         
         #include some mirror stuff here so area is actually calculated
         #include PSF calculation as well?  could do
